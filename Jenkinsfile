@@ -17,8 +17,10 @@ pipeline {
                 script {
                     app = docker.build("duffy13/react-app")
                     app.inside {
-                        sh 'echo $(curl localhost:80)'
+                        sh 'echo $(curl localhost:1233)'
+                    
                     }
+                    sh 'netstat -an'
                 }
             }
         }
